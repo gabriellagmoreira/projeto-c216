@@ -78,7 +78,7 @@ def excluir_consulta(consulta_id):
     #payload = {'id': consulta_id}
     payload = {'id': consulta_id}
     
-    response = requests.delete(f"{API_BASE_URL}/excluir", json=payload)
+    response = requests.post(f"{API_BASE_URL}/excluir", json=payload)
     
     if response.status_code == 200:
         return redirect(url_for('listar_consultas'))
